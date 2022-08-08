@@ -31,8 +31,8 @@ const HomeSkills = (props: Props) => {
 
   return (
     <>
-      <hr className="border gray-200 dark:border-gray-900" />
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-between relative max-w-[1200px] mx-auto pt-24 pb-24 px-5 items-center relative">
+      <hr className="border-1 gray-200 dark:border-gray-800" />
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-between relative max-w-[1200px] mx-auto pt-24 pb-24 px-5 gap-10 items-center relative">
         <div>
           <div>
             <h2 className=" text-5xl font-bold mb-2 text-primary dark:text-warning">
@@ -48,27 +48,27 @@ const HomeSkills = (props: Props) => {
           </div>
 
           <FaCode
-            className="_floating opacity-90 text-primary top-[100px] left-[50px] rotate-[70deg]"
+            className="_floating hidden md:block opacity-90 text-primary top-[100px] left-[50px] rotate-[70deg]"
             size={80}
             style={{ animationDelay: "0.4s" }}
           />
           <FaCodeBranch
-            className="_floating opacity-90 text-primary b0ttom-[100px] left-[calc(50%-70px)] rotate-[70deg]"
+            className="_floating hidden md:block opacity-90 text-primary b0ttom-[100px] left-[calc(50%-70px)] rotate-[70deg]"
             size={100}
             style={{ animationDelay: "0.4s" }}
           />
           <FaLaptop
-            className="_floating opacity-90 text-primary bottom-[70px] left-[60px] rotate-[70deg]"
+            className="_floating hidden md:block opacity-90 text-primary bottom-[70px] left-[60px] rotate-[70deg]"
             size={50}
             style={{ animationDelay: "0.6s" }}
           />
           <FaLaptopCode
-            className="_floating opacity-90 text-primary top-[50px] left-[400px] rotate-[70deg]"
+            className="_floating hidden md:block opacity-90 text-primary top-[50px] left-[400px] rotate-[70deg]"
             size={50}
             style={{ animationDelay: "0.2s" }}
           />
           <FaStar
-            className="_floating text-primary top-[50%] -left-[50px] rotate-[70deg]"
+            className="_floating hidden md:block text-primary top-[50%] -left-[50px] rotate-[70deg]"
             size={50}
             style={{ animationDelay: "0.7s" }}
           />
@@ -115,7 +115,7 @@ const HomeSkills = (props: Props) => {
           </div>
         </div>
       </div>
-      <hr className="border gray-200 dark:border-gray-900 " />
+      <hr className="border-1 gray-200 dark:border-gray-800  " />
     </>
   );
 };

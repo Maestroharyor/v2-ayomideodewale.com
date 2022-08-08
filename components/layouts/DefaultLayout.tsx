@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
+import { connect, useDispatch } from "react-redux";
+
+// Components
 import MainHeader from "../headers/Mainheader";
 const Mobileheader = dynamic(() => import("../headers/Mobileheader"));
 const Footer = dynamic(() => import("../footers/Footer"));
 const Particles = dynamic(() => import("react-tsparticles"), { ssr: false });
 import { loadFull } from "tsparticles";
-
 import Metadata from "../headers/partials/Metadata";
-import { connect, useDispatch } from "react-redux";
 
+// Functions and Data
 import { ModalData, ThemeData } from "../../data/dataTypes";
 
 type Props = {
@@ -20,6 +23,7 @@ type Props = {
 };
 
 const DefaultLayout = (props: Props) => {
+  const router = useRouter();
   const particlesInit = async (main: any) => {
     console.log(main);
 
@@ -94,10 +98,14 @@ const DefaultLayout = (props: Props) => {
       <MainHeader />
       <Mobileheader />
 
-      <div className="min-h-[100vh] dark:text-light z-[10] overflow-x-hidden">
+      <div
+        className={`dark:text-light z-[10] overflow-x-hidden ${
+          router.pathname === "/404" ? "" : "min-h-[100vh] "
+        }`}
+      >
         {props.children}
       </div>
-      <Footer />
+      {router.pathname !== "/404" && <Footer />}
     </>
   );
 };

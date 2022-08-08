@@ -2,18 +2,21 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { connect, useDispatch } from "react-redux";
-import { setDarkModeTheme, setLightModeTheme } from "../../store/theme/action";
-import { closeSearchModal } from "../../store/modal/action";
-import { themeChange, themeOSLoad } from "../../functions/theme";
-import { ModalData, ThemeData } from "../../data/dataTypes";
+
+// Components
 // const SearchModal = dynamic(
 //   () => import("../general/SearchModal"),
 //   { ssr: false }
 // );
-// const BacktoTop = dynamic(
-//   () => import("../general/BackToTop"),
-//   { ssr: false }
-// );
+const BacktoTop = dynamic(() => import("../partials/BackToTop"), {
+  ssr: false,
+});
+
+// Functions and Data
+import { closeSearchModal } from "../../store/modal/action";
+import { setDarkModeTheme, setLightModeTheme } from "../../store/theme/action";
+import { themeChange, themeOSLoad } from "../../functions/theme";
+import { ModalData, ThemeData } from "../../data/dataTypes";
 
 type Props = {
   children: JSX.Element;
@@ -42,8 +45,9 @@ const MasterLayout = (props: any) => {
   return (
     <>
       {props.children}
+      <BacktoTop />
       {/* <SearchModal />
-      <BacktoTop /> */}
+       */}
     </>
   );
 };

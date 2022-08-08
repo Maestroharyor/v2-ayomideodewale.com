@@ -15,7 +15,7 @@ function ProjectCard({ project }: Props) {
       <a
         href={project.link || project.github}
         target="_blank"
-        className={`w-full relative rounded-xl border-fun-gray border p-2 transition hover:-translate-y-2 hover:border-fun-pink`}
+        className={`w-full relative rounded-xl border-gray-400 dark:border-gray-600 border-2 p-2 transition hover:-translate-y-2 hover:border-primary-hov dark:hover:border-warning `}
         rel="noreferrer"
       >
         <img

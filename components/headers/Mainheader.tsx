@@ -33,7 +33,7 @@ const MainHeader = ({ theme }: Props) => {
   }, [theme?.lightMode]);
 
   return (
-    <header className="hidden lg:block bg-gray-100 dark:bg-dark-theme pt-7 pb-5 px-5">
+    <header className="hidden lg:block bg-gray-100/90 pt-5 pb-3 px-5 sticky top-0 z-[20] dark:bg-[rgba(0,10,31,0.96)]">
       <nav className=" flex justify-between items-center">
         <motion.li
           className="list-none font-bold text-lg cursor-pointer "
@@ -47,7 +47,7 @@ const MainHeader = ({ theme }: Props) => {
           }}
         >
           <Link href="/" passHref>
-            <div className="font-black text-xl flex items-center gap-1.5">
+            <a className="font-black text-xl flex items-center gap-1.5">
               <Image
                 className="transform hover:rotate-[360deg] hover:scale-75 transition-transform duration-500"
                 src={
@@ -71,7 +71,7 @@ const MainHeader = ({ theme }: Props) => {
                   );
                 })}
               </div>
-            </div>
+            </a>
           </Link>
         </motion.li>
         <motion.ul

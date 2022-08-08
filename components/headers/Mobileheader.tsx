@@ -52,10 +52,10 @@ const MobileHeader = ({ theme }: Props) => {
   }, []);
 
   return (
-    <header className="block lg:hidden relative">
+    <header className="block lg:hidden relative bg-gray-100/90 sticky top-0 z-[20] dark:bg-[rgba(0,10,31,0.96)]">
       <nav className="bg-gray-100 dark:bg-dark-theme py-2 px-5 flex justify-between items-center">
         <Link href="/" passHref>
-          <motion.div
+          <motion.a
             className="font-black text-xl flex items-center gap-1.5 "
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ const MobileHeader = ({ theme }: Props) => {
                 );
               })}
             </div>
-          </motion.div>
+          </motion.a>
         </Link>
 
         <div className="flex gap-3 items-center">
@@ -162,7 +162,7 @@ const MobileHeader = ({ theme }: Props) => {
       </nav>
       {isMenuMounted && (
         <div
-          className={`h-[100vh] w-full bg-gray-100 dark:bg-dark-theme w-full top-[60px] left-0 z-[100] flex flex-col absolute transition duration-400 ease-in-out px-4 
+          className={`h-[100vh] w-full bg-gray-100 dark:bg-dark-theme w-full top-[51px] left-0 z-[100] flex flex-col absolute transition duration-400 ease-in-out px-4 
             ${isMenuRendered ? "menuRendered opacity-100" : "opacity-0"}`}
         >
           <ul className="flex flex-col divide-y divide-gray-300 dark:divide-gray-900 gap-y-1">
