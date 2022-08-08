@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import { connect, useDispatch } from "react-redux";
@@ -10,6 +10,7 @@ const Footer = dynamic(() => import("../footers/Footer"));
 const Particles = dynamic(() => import("react-tsparticles"), { ssr: false });
 import { loadFull } from "tsparticles";
 import Metadata from "../headers/partials/Metadata";
+import { Spin } from "antd";
 
 // Functions and Data
 import { ModalData, ThemeData } from "../../data/dataTypes";
@@ -24,18 +25,23 @@ type Props = {
 
 const DefaultLayout = (props: Props) => {
   const router = useRouter();
+  const [appLoading, setAppLoading] = useState(true);
   const particlesInit = async (main: any) => {
-    console.log(main);
-
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(main);
+    setAppLoading(false);
   };
 
   return (
     <>
       <Metadata title={props.title} metadescription={props.desc} />
+      {appLoading && (
+        <div className="fixed bg-gray-100 dark:bg-dark-theme top-0 left-0 h-full w-full flex justify-center items-center z-40 text-4xl">
+          <Spin size="large" />
+        </div>
+      )}
       <Particles
         id="tsparticles"
         init={particlesInit}
