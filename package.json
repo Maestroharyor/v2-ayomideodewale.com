@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/koho": "^4.5.9",
+    "@types/react-scroll": "^1.8.4",
     "antd": "^4.22.1",
     "axios": "^0.27.2",
     "framer-motion": "^6.5.1",
