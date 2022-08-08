@@ -37,6 +37,9 @@ const DefaultLayout = (props: Props) => {
         init={particlesInit}
         // loaded={particlesLoaded}
         options={{
+          background: {
+            color: props.theme?.lightMode ? "#f3f4f6" : "#000A1F",
+          },
           detectRetina: false,
           fpsLimit: 30,
           interactivity: {
@@ -48,7 +51,7 @@ const DefaultLayout = (props: Props) => {
 
           particles: {
             color: {
-              value: props.theme?.lightMode ? "#42489E" : "#fff",
+              value: props.theme?.lightMode ? "#42489E" : "#f3f4f6",
             },
             number: {
               density: {
@@ -84,14 +87,14 @@ const DefaultLayout = (props: Props) => {
           },
           fullScreen: {
             enable: true,
-            zIndex: 0, // or any value is good for you, if you use -1 set `interactivity.detectsOn` to `"window"` if you need mouse interactions
+            zIndex: -1, // or any value is good for you, if you use -1 set `interactivity.detectsOn` to `"window"` if you need mouse interactions
           },
         }}
       />
       <MainHeader />
       <Mobileheader />
 
-      <div className="min-h-[100vh] bg-gray-100 dark:bg-dark-theme dark:text-light">
+      <div className="min-h-[100vh] dark:text-light z-[10] overflow-x-hidden">
         {props.children}
       </div>
       <Footer />

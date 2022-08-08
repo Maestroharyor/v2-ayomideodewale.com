@@ -34,9 +34,9 @@ const MainHeader = ({ theme }: Props) => {
 
   return (
     <header className="hidden lg:block bg-gray-100 dark:bg-dark-theme pt-7 pb-5 px-5">
-      <nav className=" flex justify-between items-center ">
+      <nav className=" flex justify-between items-center">
         <motion.li
-          className="list-none font-bold text-lg cursor-pointer"
+          className="list-none font-bold text-lg cursor-pointer "
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -75,7 +75,7 @@ const MainHeader = ({ theme }: Props) => {
           </Link>
         </motion.li>
         <motion.ul
-          className="flex items-center gap-x-10"
+          className="flex items-center gap-x-10 "
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{

@@ -100,7 +100,10 @@ const HomeSkills = (props: Props) => {
                     width={50}
                     height={50}
                     className={`${
-                      item.skill.toLowerCase() === "nextjs" ? "dark:invert" : ""
+                      item.skill.toLowerCase() === "nextjs" ||
+                      item.skill.toLowerCase() === "solidity"
+                        ? "dark:invert"
+                        : ""
                     }`}
                   />
                   <p className="text-sm text-gray-600 font-bold mt-3 opacity-80">
@@ -112,7 +115,7 @@ const HomeSkills = (props: Props) => {
           </div>
         </div>
       </div>
-      <hr className="border gray-200 dark:border-gray-900" />
+      <hr className="border gray-200 dark:border-gray-900 " />
     </>
   );
 };

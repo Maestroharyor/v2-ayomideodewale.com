@@ -10,7 +10,7 @@ type Props = {};
 const Footer = (props: Props) => {
   const router = useRouter();
   return (
-    <footer className="dark:bg-dark-theme border-t border-gray-200 dark:border-gray-900 dark:text-white pt-20 pb-20 ">
+    <footer className="border-t border-gray-200 dark:border-gray-900 dark:text-white pt-20 pb-20 ">
       <div className="max-w-[800px] mx-auto">
         <div className="mb-10">
           <h4 className="uppercase text-lg font-bold text-center dark:text-warning mb-10">

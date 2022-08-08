@@ -26,7 +26,7 @@ function Hero() {
         // style={{ maxWidth: "1200px" }}
       >
         <p className="text-xl mb-5">Hello, I&apos;m Ayomide (Maestro).</p>
-        <h1 className="heroTitle inline-block max-w-2xl lg:max-w-4xl  w-auto relative text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-10 font-bold heroShinyBg dark:text-white">
+        <h1 className="heroTitle inline-block max-w-2xl lg:max-w-4xl  w-auto relative text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-10 font-bold  dark:text-white">
           I love{" "}
           <span className="text-primary dark:text-warning">designing</span> and
           <span className="text-primary dark:text-warning"> building</span> web
@@ -53,12 +53,12 @@ function Hero() {
         />
 
         <FaReact
-          className="_floating opacity-50 text-primary  top-[92px] left-[10px] rotate-[70deg]"
+          className="_floating opacity-30 md:opacity-50 text-primary  top-[192px] md:top-[92px] left-[-50px] sm:left-[10px] rotate-[70deg]"
           size={100}
           style={{ animationDelay: "0.6s" }}
         />
         <FaVuejs
-          className="_floating opacity-50 text-primary top-[92px] right-[10px] rotate-[70deg]"
+          className="_floating opacity-30 md:opacity-50 text-primary top-[192px] md:top-[92px] right-[-50px] sm:right-[10px] rotate-[70deg]"
           size={100}
           style={{ animationDelay: "0.4s" }}
         />

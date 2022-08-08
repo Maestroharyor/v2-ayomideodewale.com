@@ -56,7 +56,7 @@ const MobileHeader = ({ theme }: Props) => {
       <nav className="bg-gray-100 dark:bg-dark-theme py-2 px-5 flex justify-between items-center">
         <Link href="/" passHref>
           <motion.div
-            className="font-black text-xl flex items-center gap-1.5"
+            className="font-black text-xl flex items-center gap-1.5 "
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -102,6 +102,7 @@ const MobileHeader = ({ theme }: Props) => {
               stiffness: 500,
               type: "spring",
             }}
+            className=""
           >
             <Switch
               aria-label="Switch Theme Button"
@@ -134,6 +135,7 @@ const MobileHeader = ({ theme }: Props) => {
               stiffness: 500,
               type: "spring",
             }}
+            className="z-10"
           >
             <button
               aria-label="Mobile Menu Navigation Button"
