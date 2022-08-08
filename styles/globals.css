@@ -1,26 +1,122 @@
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'KoHo', sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --primary-color: #42489E;
+  --primary-accent-color: #0c56d0;
+  --dark-theme-color: #000A1F;
+  --warning: #FFA900;
 }
 
-* {
-  box-sizing: border-box;
+/* Scroll Bar - Webkit */
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: var(--dark-theme-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-accent-color);
+}
+
+.landingSectionTitle:before {
+  content: "";
+  position: absolute;
+  left: 105%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100vw;
+  background-color: var(--primary-accent-color);
+  border-radius: 100%;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle::before {
+    left: 50%;
+    right: auto;
+    top: -20px;
+    transform: translate(-50%, -50%);
+    height: 8px;
+    width: 150px;
+
   }
-  body {
-    color: white;
-    background: black;
+}
+
+.testimonialQuote::before {
+  content: "“";
+  position: absolute;
+  top: -10px;
+  left: -46px;
+  opacity: 0.75;
+  font-size: 80px;
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+._floating {
+  position: absolute;
+  animation: float 2s infinite ease-in-out;
+  /* z-index: -1; */
+}
+
+
+.profile__details a{
+  text-decoration: underline;
+  color: var(--primary-color);
+  font-style: italic;
+  transition: all 0.3s ease-in-out;
+}
+.profile__details a:hover{
+  color: var(--primary-accent-color);
+}
+
+html.dark .profile__details a {
+  color: var(--warning);
+}
+html.dark .profile__details a:hover {
+  color: var(--primary-accent-color);
+}
+
+.profile__details p {
+  margin-bottom: 20px;
 }

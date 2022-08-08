@@ -1,7 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextSettings = {
   reactStrictMode: true,
-  swcMinify: true,
-}
+  env: {
+      title: 'Ayomide Odewale (MaestroHaryor)',
+      name: "Ayomide Odewale",
+      titleDescription: 'Welcome to Me',
+  },
+    i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextSettings;
