@@ -1,14 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { FaExchangeAlt, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { footerMenu, socialMenu } from "../../data/menu";
+import { footerMenu } from "../../data/menu";
 
 type Props = {};
 
 const Footer = (props: Props) => {
-  const router = useRouter();
   return (
     <footer className="border-t border-gray-200 dark:border-gray-900 dark:text-white pt-20 pb-20 ">
       <div className="max-w-[800px] mx-auto">
@@ -89,19 +87,6 @@ const Footer = (props: Props) => {
           </p>
         </div>
       </div>
-
-      {/* <div className="mt-8 text-center sm:text-right sm:-mt-12">
-        <a
-          className="w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50"
-          href="https://github.com/braydentw/braydentw.io"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaGithub />
-
-          <span className="ml-2">View Source Code </span>
-        </a>
-      </div> */}
     </footer>
   );
 };

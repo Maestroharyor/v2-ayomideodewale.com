@@ -4,16 +4,14 @@ import { useRouter } from "next/router";
 import { connect, useDispatch } from "react-redux";
 
 // Components
-// const SearchModal = dynamic(
-//   () => import("../general/SearchModal"),
-//   { ssr: false }
-// );
+const ContactModal = dynamic(() => import("../partials/ContactModal"), {
+  ssr: false,
+});
 const BacktoTop = dynamic(() => import("../partials/BackToTop"), {
   ssr: false,
 });
 
 // Functions and Data
-import { closeSearchModal } from "../../store/modal/action";
 import { setDarkModeTheme, setLightModeTheme } from "../../store/theme/action";
 import { themeChange, themeOSLoad } from "../../functions/theme";
 import { ModalData, ThemeData } from "../../data/dataTypes";
@@ -28,13 +26,9 @@ const MasterLayout = (props: any) => {
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const testFunction = () => {
-    console.log("Test function");
-  };
+  console.log(props.modal);
 
   useEffect(() => {
-    console.log("Watch props");
-    testFunction();
     themeChange(props);
   });
 
@@ -46,8 +40,7 @@ const MasterLayout = (props: any) => {
     <>
       {props.children}
       <BacktoTop />
-      {/* <SearchModal />
-       */}
+      <ContactModal />
     </>
   );
 };

@@ -12,38 +12,40 @@ export interface Menus {
   submenus?: SubmenuMenus[];
 }
 
-export interface Skill{
+export interface Skill {
   skill: string;
   src: string;
 }
 
-export interface Project{
-      id: number,
-    title: string,
-    desc: string,
-    img: string,
-    link?: string,
-    github?: string,
-    tags: string[],
+export interface Project {
+  id: number;
+  title: string;
+  desc: string;
+  img: string;
+  inDevelopment?: boolean;
+  featured?: boolean;
+  link?: string;
+  github?: string;
+  tags: string[];
 }
 
 export interface Testimonial {
-  quote: string,
-  name: string,
-  job: string
-};
+  quote: string;
+  name: string;
+  job: string;
+}
 
-export interface Design{
+export interface Design {
   label: string;
   image: string;
   link?: string;
 }
 
 // Redux state interfaces
-export interface ThemeData{
+export interface ThemeData {
   lightMode: boolean;
 }
 
-export interface ModalData{
+export interface ModalData {
   opened: boolean;
 }

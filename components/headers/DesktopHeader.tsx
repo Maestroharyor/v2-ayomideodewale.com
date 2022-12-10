@@ -20,20 +20,64 @@ type Props = {
   theme?: ThemeData;
 };
 
-const MainHeader = ({ theme }: Props) => {
+const DesktopHeader = ({ theme }: Props) => {
   const [isLight, setIsLight] = useState<boolean | undefined>(theme?.lightMode);
 
   const router = useRouter();
   const dispatch = useDispatch();
 
-  // console.log(router.pathname);
-
   useEffect(() => {
     setIsLight(theme?.lightMode);
   }, [theme?.lightMode]);
 
+  useEffect(() => {
+    const header = document.querySelector(
+      "#desktop_header"
+    ) as HTMLHeadingElement;
+
+    let lastScrollTop = 0;
+    const handleScrollBar = () => {
+      if (header !== null) {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          // header.classList.add("top-[-80px]");
+          header.style.top = "-80px";
+          header.classList.remove(
+            "bg-gray-100/90",
+            "dark:bg-[rgba(0,10,31,0.96)]"
+          );
+        } else {
+          header.style.top = "0px";
+          header.classList.add(
+            "bg-gray-100/90",
+            "dark:bg-[rgba(0,10,31,0.96)]"
+          );
+        }
+
+        if (window.pageYOffset <= 60) {
+          header.classList.remove(
+            "bg-gray-100/90",
+            "dark:bg-[rgba(0,10,31,0.96)]"
+          );
+        }
+        lastScrollTop = scrollTop;
+      }
+    };
+
+    window.addEventListener("scroll", handleScrollBar);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollBar);
+    };
+  }, []);
+
   return (
-    <header className="hidden lg:block bg-gray-100/90 pt-5 pb-3 px-5 sticky top-0 z-[20] dark:bg-[rgba(0,10,31,0.96)]">
+    <header
+      id="desktop_header"
+      className="hidden lg:block  pt-5 pb-3 px-5 sticky top-0 z-[50] backdrop-blur"
+    >
       <nav className=" flex justify-between items-center">
         <motion.li
           className="list-none font-bold text-lg cursor-pointer "
@@ -109,7 +153,12 @@ const MainHeader = ({ theme }: Props) => {
             </button>
           </li>
           <li>
-            <button className="border-2 rounded-full px-8 py-2 border-primary dark:border-white text-lg font-medium text-primary dark:text-white  hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning">
+            <button
+              className="border-2 rounded-full px-8 py-2 border-primary dark:border-white text-lg font-medium text-primary dark:text-white  hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning"
+              onClick={() => {
+                dispatch(openSearchModal());
+              }}
+            >
               Get In Touch
             </button>
           </li>
@@ -154,4 +203,4 @@ const mapStateToProps = (state: any) => {
   return state;
 };
 
-export default connect<ThemeData, ModalData>(mapStateToProps)(MainHeader);
+export default connect<ThemeData, ModalData>(mapStateToProps)(DesktopHeader);

@@ -27,6 +27,7 @@ const MobileHeader = ({ theme }: Props) => {
   const dispatch = useDispatch();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [logoDir, setLogoDir] = useState("/static/logos/dark_logo.svg");
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
     {
@@ -51,6 +52,12 @@ const MobileHeader = ({ theme }: Props) => {
     };
   }, []);
 
+  useEffect(() => {
+    theme?.lightMode
+      ? setLogoDir("/static/logos/light_logo.svg")
+      : setLogoDir("/static/logos/dark_logo.svg");
+  }, [theme?.lightMode]);
+
   return (
     <header className="block lg:hidden relative bg-gray-100/90 sticky top-0 z-[20] dark:bg-[rgba(0,10,31,0.96)]">
       <nav className="bg-gray-100 dark:bg-dark-theme py-2 px-5 flex justify-between items-center">
@@ -68,11 +75,7 @@ const MobileHeader = ({ theme }: Props) => {
           >
             <Image
               className="transform hover:rotate-[360deg] hover:scale-75 transition-transform duration-500"
-              src={
-                theme?.lightMode
-                  ? "/static/logos/light_logo.svg"
-                  : "/static/logos/dark_logo.svg"
-              }
+              src={logoDir}
               alt="Ayomide Odewale Logo"
               width={30}
               height={30}

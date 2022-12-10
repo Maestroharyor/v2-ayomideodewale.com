@@ -1,23 +1,28 @@
+:root {
+  --primary-color: #42489e;
+  --primary-accent-color: #0c56d0;
+  --dark-theme-color: #000a1f;
+  --warning: #ffa900;
+}
+
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-accent-color) #f3f4f6;
+}
+
+html.dark {
+  scrollbar-color: #f3f4f6 var(--dark-theme-color);
 }
 
 body {
-  font-family: 'KoHo', sans-serif;
-}
-
-:root {
-  --primary-color: #42489E;
-  --primary-accent-color: #0c56d0;
-  --dark-theme-color: #000A1F;
-  --warning: #FFA900;
+  font-family: "KoHo", sans-serif;
 }
 
 /* Scroll Bar - Webkit */
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
-
 }
 
 /* Track */
@@ -36,14 +41,12 @@ html.dark ::-webkit-scrollbar-track {
   transition: all 0.3s ease-in-out;
 }
 
-
-
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-accent-color);
 }
 
-.landingSectionTitle:before {
+.section__title:before {
   content: "";
   position: absolute;
   left: 105%;
@@ -64,7 +67,6 @@ html.dark ::-webkit-scrollbar-track {
     transform: translate(-50%, -50%);
     height: 8px;
     width: 150px;
-
   }
 }
 
@@ -76,7 +78,6 @@ html.dark ::-webkit-scrollbar-track {
   opacity: 0.75;
   font-size: 80px;
 }
-
 
 @keyframes float {
   0% {
@@ -92,21 +93,19 @@ html.dark ::-webkit-scrollbar-track {
   }
 }
 
-
 ._floating {
   position: absolute;
   animation: float 2s infinite ease-in-out;
   /* z-index: -1; */
 }
 
-
-.profile__details a{
+.profile__details a {
   text-decoration: underline;
   color: var(--primary-color);
   font-style: italic;
   transition: all 0.3s ease-in-out;
 }
-.profile__details a:hover{
+.profile__details a:hover {
   color: var(--primary-accent-color);
 }
 

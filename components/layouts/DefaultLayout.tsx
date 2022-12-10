@@ -4,9 +4,10 @@ import dynamic from "next/dynamic";
 import { connect, useDispatch } from "react-redux";
 
 // Components
-import MainHeader from "../headers/Mainheader";
-const Mobileheader = dynamic(() => import("../headers/Mobileheader"));
-const Footer = dynamic(() => import("../footers/Footer"));
+
+import Footer from "../footers/Footer";
+import DesktopHeader from "../headers/DesktopHeader";
+import Mobileheader from "../headers/Mobileheader";
 const Particles = dynamic(() => import("react-tsparticles"), { ssr: false });
 import { loadFull } from "tsparticles";
 import Metadata from "../headers/partials/Metadata";
@@ -14,6 +15,7 @@ import { Spin } from "antd";
 
 // Functions and Data
 import { ModalData, ThemeData } from "../../data/dataTypes";
+// import Mainheader from "../headers/Mainheader";
 
 type Props = {
   title?: string;
@@ -26,11 +28,22 @@ type Props = {
 const DefaultLayout = (props: Props) => {
   const router = useRouter();
   const [appLoading, setAppLoading] = useState(true);
+  const [particlesBackground, setParticlesBackground] = useState("#000A1F");
+
+  useEffect(() => {
+    props.theme?.lightMode
+      ? setParticlesBackground("#f3f4f6")
+      : setParticlesBackground("#000A1F");
+  }, [props.theme?.lightMode]);
+
   const particlesInit = async (main: any) => {
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(main);
+  };
+
+  const particlesLoaded = async (main: any) => {
     setAppLoading(false);
   };
 
@@ -45,10 +58,10 @@ const DefaultLayout = (props: Props) => {
       <Particles
         id="tsparticles"
         init={particlesInit}
-        // loaded={particlesLoaded}
+        loaded={particlesLoaded}
         options={{
           background: {
-            color: props.theme?.lightMode ? "#f3f4f6" : "#000A1F",
+            color: particlesBackground,
           },
           detectRetina: false,
           fpsLimit: 30,
@@ -101,11 +114,12 @@ const DefaultLayout = (props: Props) => {
           },
         }}
       />
-      <MainHeader />
+
+      <DesktopHeader />
       <Mobileheader />
 
       <div
-        className={`dark:text-light z-[10] overflow-x-hidden ${
+        className={`dark:text-white-dark z-[10] overflow-x-hidden ${
           router.pathname === "/404" ? "" : "min-h-[100vh] "
         }`}
       >

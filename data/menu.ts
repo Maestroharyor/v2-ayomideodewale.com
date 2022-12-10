@@ -1,7 +1,6 @@
-import {Menus} from "./dataTypes";
+import { Menus } from "./dataTypes";
 
 export const menuData: Menus[] = [
-
   {
     title: "Home",
     link: "/",
@@ -16,11 +15,8 @@ export const menuData: Menus[] = [
     title: "Designs",
     link: "/designs",
     hasSubmenu: false,
-  }
-
+  },
 ];
-
-
 
 export const footerMenu: Menus[] = [
   {
@@ -44,10 +40,15 @@ export const footerMenu: Menus[] = [
     hasSubmenu: false,
   },
   {
+    title: "Get in Touch",
+    link: "/contact",
+    hasSubmenu: false,
+  },
+  {
     title: "My Blog",
     link: "https://thelifetechfacts.com",
     hasSubmenu: false,
-    external: true
+    external: true,
   },
 ];
 export const socialMenu: Menus[] = [
@@ -55,37 +56,36 @@ export const socialMenu: Menus[] = [
     title: "GitHub",
     link: "https://github.com/MaestroHaryor",
     hasSubmenu: false,
-    external: true
+    external: true,
   },
   {
     title: "LinkedIn",
     link: "https://www.linkedin.com/in/ayomide-odewale",
     hasSubmenu: false,
-    external: true
+    external: true,
   },
   {
     title: "Twitter",
     link: "https://twitter.com/MaestroHaryor",
     hasSubmenu: false,
-    external: true
+    external: true,
   },
   {
     title: "Facebook",
     link: "https://web.facebook.com/ayomide.odewale.125",
     hasSubmenu: false,
-    external: true
+    external: true,
   },
   {
     title: "Instagram",
     link: "https://instagram.com/maestroharyorjoshua",
     hasSubmenu: false,
-    external: true
+    external: true,
   },
   {
     title: "Blog",
     link: "https://thelifetechfacts.com",
     hasSubmenu: false,
-    external: true
+    external: true,
   },
-
 ];
