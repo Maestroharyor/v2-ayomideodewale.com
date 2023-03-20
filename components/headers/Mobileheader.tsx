@@ -61,7 +61,7 @@ const MobileHeader = ({ theme }: Props) => {
   return (
     <header className="block lg:hidden relative bg-gray-100/90 sticky top-0 z-[20] dark:bg-[rgba(0,10,31,0.96)]">
       <nav className="bg-gray-100 dark:bg-dark-theme py-2 px-5 flex justify-between items-center">
-        <Link href="/" passHref>
+        <Link legacyBehavior href="/" passHref>
           <motion.a
             className="font-black text-xl flex items-center gap-1.5 "
             initial={{ opacity: 0, y: -30 }}
@@ -180,7 +180,7 @@ const MobileHeader = ({ theme }: Props) => {
                   }`}
                   style={{ transitionDelay: `${150 + index * 25}ms` }}
                 >
-                  <Link href={item.link}>
+                  <Link legacyBehavior href={item.link}>
                     <a className="flex w-auto py-3 text-lg font-medium text-primary hover:text-dark-theme dark:text-gray-200 dark:hover:text-warning">
                       {item.title}
                     </a>

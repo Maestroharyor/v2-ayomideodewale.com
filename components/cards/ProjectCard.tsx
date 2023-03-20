@@ -71,7 +71,11 @@ function ProjectCard({ project }: Props) {
           {project.tags.map((tag) => {
             return (
               <li key={tag}>
-                <Link href={`/projects/tag/${tag.toLowerCase()}`} passHref>
+                <Link
+                  legacyBehavior
+                  href={`/projects/tag/${tag.toLowerCase()}`}
+                  passHref
+                >
                   <a className=" rounded-lg text-sm bg-primary text-white dark:bg-primary-hov hover:text-white py-1 px-2 cursor-pointer hover:opacity-75 block">
                     {tag}
                   </a>

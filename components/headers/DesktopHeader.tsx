@@ -90,7 +90,7 @@ const DesktopHeader = ({ theme }: Props) => {
             type: "spring",
           }}
         >
-          <Link href="/" passHref>
+          <Link legacyBehavior href="/" passHref>
             <a className="font-black text-xl flex items-center gap-1.5">
               <Image
                 className="transform hover:rotate-[360deg] hover:scale-75 transition-transform duration-500"
@@ -132,7 +132,7 @@ const DesktopHeader = ({ theme }: Props) => {
           {menuData.map((item, index) => {
             return (
               <li key={index}>
-                <Link href={item.link} passHref>
+                <Link legacyBehavior href={item.link} passHref>
                   <a
                     className={`text-lg list-none transition duration-300 ease-in-out ${
                       router.pathname === item.link

@@ -28,7 +28,7 @@ const Footer = (props: Props) => {
                     <FaExternalLinkAlt size={10} />
                   </a>
                 ) : (
-                  <Link href={menu.link} passHref>
+                  <Link legacyBehavior href={menu.link} passHref>
                     <a className="text-xl hover:text-primary-hov dark:hover:text-warning">
                       {menu.title}
                     </a>

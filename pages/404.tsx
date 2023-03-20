@@ -25,7 +25,7 @@ function NotFound({}: Props) {
             Page Not Found
           </h1>
           <p className="mb-5 text-xl">This page does not exist.</p>
-          <Link href="/" passHref>
+          <Link legacyBehavior href="/" passHref>
             <a className="border-2 rounded-full px-8 py-2 border-primary dark:border-white text-lg font-medium text-primary dark:text-white  hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning inline-flex gap-5 items-center">
               <FaHome />
               <span>Go Home</span>

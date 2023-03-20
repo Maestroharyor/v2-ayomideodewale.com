@@ -95,7 +95,7 @@ const DefaultLayout = (props: Props) => {
 
       <div className="min-h-[100vh] dark:text-light z-[10] overflow-x-hidden flex items-center justify-center relative pb-[80px]">
         <div className="flex flex-col gap-y-10 h-full w-full relative items-center justify-between px-5">
-          <Link href="/" passHref>
+          <Link legacyBehavior href="/" passHref>
             <a className="font-black text-xl flex items-center gap-1.5">
               <Image
                 className="transform hover:rotate-[360deg] hover:scale-75 transition-transform duration-500"
@@ -132,7 +132,7 @@ const DefaultLayout = (props: Props) => {
             <p className="text-xl text-gray-500 dark:text-light">
               Now that you&apos;re here, maybe I&apos;ll turn up the heat 🤔...
             </p>
-            <Link href={"/projects"}>
+            <Link legacyBehavior href={"/projects"}>
               <a className="border-2 rounded-full px-8 py-2 border-primary dark:border-white text-lg font-medium text-primary dark:text-white  hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning _floating bottom-[-80px]">
                 <FaCode className="hidden md:inline-block" />{" "}
                 <span>Checkout my dev projects</span>
