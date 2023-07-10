@@ -26,6 +26,7 @@ function HomeProjects() {
         <Link
           href={"/projects"}
           className="border-2 rounded-full px-5 md:px-32 py-2 border-primary dark:border-white text-lg font-medium text-primary   hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning"
+          aria-label="see more projects"
         >
           See More
         </Link>

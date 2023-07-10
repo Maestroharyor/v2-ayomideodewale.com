@@ -22,7 +22,7 @@ function Hero() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.5, type: "spring", stiffness: 100 }}
-        className="relative home_hero w-full pt-20 pb-52 px-5 m-auto flex justify-center text-center flex-col items-center z-1 max-w-[1200px]"
+        className="relative min-h-[100vh] w-full pt-20 pb-52 px-5 m-auto flex justify-center text-center flex-col items-center z-1 max-w-[1200px]"
         // style={{ maxWidth: "1200px" }}
       >
         <p className="text-xl mb-5">Hello, I&apos;m Ayomide (Maestro).</p>
@@ -78,8 +78,9 @@ function Hero() {
           offset={-30}
           smooth={true}
           duration={500}
+          aria-label="More"
         >
-          <div className="border-2 rounded-full px-8 py-2 border-primary dark:border-white text-lg font-medium text-primary dark:text-white  hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning">
+          <div className="border-2 rounded-full px-8 py-2 border-primary dark:border-white text-lg font-medium text-primary   hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning">
             Tell me more
           </div>
         </ScrollLink>

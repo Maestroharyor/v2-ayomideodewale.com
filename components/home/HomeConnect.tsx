@@ -66,6 +66,7 @@ const HomeConnect = (props: Props) => {
                   target="_blank"
                   rel="noreferrer"
                   className="block text-primary hover:text-primary-hov dark:text-white dark:hover:text-warning"
+                  aria-label={social.title}
                 >
                   <span>{social.icon}</span>
                 </a>

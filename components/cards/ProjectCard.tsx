@@ -16,10 +16,12 @@ function ProjectCard({ project }: Props) {
         <div
           className={`w-full relative rounded-xl border-gray-400 dark:border-gray-600 border-2 p-2 transition hover:scale-95 hover:rotate-6 hover:-translate-y-2 hover:border-primary-hov dark:hover:border-warning `}
         >
-          <img
+          <Image
             className="w-full hover:opacity-75 transition rounded-md"
             src={project.img}
             alt={project.title || ""}
+            width={500}
+            height={300}
           />
         </div>
       ) : (
@@ -30,9 +32,12 @@ function ProjectCard({ project }: Props) {
           rel="noreferrer"
           aria-label="project link"
         >
-          <img
+          <Image
             className="w-full hover:opacity-75 transition rounded-md"
             src={project.img}
+            alt={project.title || ""}
+            width={500}
+            height={300}
           />
         </a>
       )}

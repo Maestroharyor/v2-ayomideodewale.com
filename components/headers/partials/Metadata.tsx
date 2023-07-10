@@ -25,10 +25,10 @@ const Metadata = ({ title, metadescription, imageUrl }: Props) => {
   return (
     <Head>
       <meta charSet="UTF-8" />
-      <meta
+      {/* <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, maxiumum-scale=1"
-      />
+      /> */}
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="description" content={`${description}`} />
       <title>{titleView}</title>

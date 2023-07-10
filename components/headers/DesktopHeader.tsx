@@ -90,32 +90,34 @@ const DesktopHeader = ({ theme }: Props) => {
             type: "spring",
           }}
         >
-          <Link legacyBehavior href="/" passHref>
-            <a className="font-black text-xl flex items-center gap-1.5">
-              <Image
-                className="transform hover:rotate-[360deg] hover:scale-75 transition-transform duration-500"
-                src={
-                  theme?.lightMode
-                    ? "/static/logos/light_logo.svg"
-                    : "/static/logos/dark_logo.svg"
-                }
-                alt="Ayomide Odewale Logo"
-                width={40}
-                height={40}
-              />
-              <div>
-                {"Maestro".split("").map((letter, index) => {
-                  return (
-                    <span
-                      key={index}
-                      className="text-2xl dark:text-white-dark hover:text-primary dark:hover:text-warning hover:-translate-y-2 transition-all duration-500 hover:duration-100 inline-block"
-                    >
-                      {letter}
-                    </span>
-                  );
-                })}
-              </div>
-            </a>
+          <Link
+            href="/"
+            passHref
+            className="font-black text-xl flex items-center gap-1.5"
+          >
+            <Image
+              className="transform hover:rotate-[360deg] hover:scale-75 transition-transform duration-500"
+              src={
+                theme?.lightMode
+                  ? "/static/logos/light_logo.svg"
+                  : "/static/logos/dark_logo.svg"
+              }
+              alt="Ayomide Odewale Logo"
+              width={40}
+              height={40}
+            />
+            <div>
+              {"Maestro".split("").map((letter, index) => {
+                return (
+                  <span
+                    key={index}
+                    className="text-2xl dark:text-white-dark hover:text-primary dark:hover:text-warning hover:-translate-y-2 transition-all duration-500 hover:duration-100 inline-block"
+                  >
+                    {letter}
+                  </span>
+                );
+              })}
+            </div>
           </Link>
         </motion.li>
         <motion.ul

@@ -39,7 +39,7 @@ const HomeAbout = (props: Props) => {
               value={value}
               className="w-full flex justify-between"
               size="large"
-              aria-label="profile"
+              // aria-label="profile"
             >
               <Radio value={1}></Radio>
               <Radio value={2}></Radio>
