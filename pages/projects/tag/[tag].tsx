@@ -59,8 +59,6 @@ type Props = {
 };
 
 const ProjectTag = ({ projects, tag }: Props) => {
-  console.log(projects);
-  console.log(tag);
   return (
     <DefaultLayout title="Tag Projects">
       <>

@@ -19,6 +19,7 @@ function ProjectCard({ project }: Props) {
           <img
             className="w-full hover:opacity-75 transition rounded-md"
             src={project.img}
+            alt={project.title || ""}
           />
         </div>
       ) : (
@@ -27,6 +28,7 @@ function ProjectCard({ project }: Props) {
           target="_blank"
           className={`w-full relative rounded-xl border-gray-400 dark:border-gray-600 border-2 p-2 transition hover:scale-95 hover:rotate-6 hover:-translate-y-2 hover:border-primary-hov dark:hover:border-warning `}
           rel="noreferrer"
+          aria-label="project link"
         >
           <img
             className="w-full hover:opacity-75 transition rounded-md"
@@ -46,6 +48,7 @@ function ProjectCard({ project }: Props) {
               href={project.link || project.github}
               target="_blank"
               rel="noreferrer"
+              aria-label="Project link"
             >
               <h3 className="text-primary dark:text-warning text-xl font-bold">
                 {project.title}
@@ -55,12 +58,22 @@ function ProjectCard({ project }: Props) {
 
           <div className="inline-flex items-center gap-3">
             {project.link && (
-              <a href={project.link} target="_blank" rel="noreferrer">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="open link"
+              >
                 <FaExternalLinkAlt />
               </a>
             )}
             {project.github && (
-              <a href={project.github} target="_blank" rel="noreferrer">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Github link"
+              >
                 <FaGithub />
               </a>
             )}
@@ -72,13 +85,12 @@ function ProjectCard({ project }: Props) {
             return (
               <li key={tag}>
                 <Link
-                  legacyBehavior
                   href={`/projects/tag/${tag.toLowerCase()}`}
                   passHref
+                  className=" rounded-lg text-sm bg-primary text-white dark:bg-primary-hov hover:text-white py-1 px-2 cursor-pointer hover:opacity-75 block"
+                  aria-label="Project Category link"
                 >
-                  <a className=" rounded-lg text-sm bg-primary text-white dark:bg-primary-hov hover:text-white py-1 px-2 cursor-pointer hover:opacity-75 block">
-                    {tag}
-                  </a>
+                  {tag}
                 </Link>
               </li>
             );

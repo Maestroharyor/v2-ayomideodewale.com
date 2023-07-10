@@ -26,7 +26,7 @@ const MasterLayout = (props: any) => {
   const dispatch = useDispatch();
   const router = useRouter();
 
-  console.log(props.modal);
+  // console.log(props.modal);
 
   useEffect(() => {
     themeChange(props);

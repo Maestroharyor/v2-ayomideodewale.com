@@ -23,10 +23,11 @@ function HomeProjects() {
           })}
       </div>
       <div className="relative w-full mt-10 flex items-center justify-center">
-        <Link legacyBehavior href={"/projects"} passHref>
-          <a className="border-2 rounded-full px-5 md:px-32 py-2 border-primary dark:border-white text-lg font-medium text-primary   hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning">
-            See More
-          </a>
+        <Link
+          href={"/projects"}
+          className="border-2 rounded-full px-5 md:px-32 py-2 border-primary dark:border-white text-lg font-medium text-primary   hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning"
+        >
+          See More
         </Link>
       </div>
     </div>

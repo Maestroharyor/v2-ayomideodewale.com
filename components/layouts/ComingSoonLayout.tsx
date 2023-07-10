@@ -22,7 +22,7 @@ type Props = {
 
 const DefaultLayout = (props: Props) => {
   const particlesInit = async (main: any) => {
-    console.log(main);
+    // console.log(main);
 
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -132,11 +132,12 @@ const DefaultLayout = (props: Props) => {
             <p className="text-xl text-gray-500 dark:text-light">
               Now that you&apos;re here, maybe I&apos;ll turn up the heat 🤔...
             </p>
-            <Link legacyBehavior href={"/projects"}>
-              <a className="border-2 rounded-full px-8 py-2 border-primary dark:border-white text-lg font-medium text-primary dark:text-white  hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning _floating bottom-[-80px]">
-                <FaCode className="hidden md:inline-block" />{" "}
-                <span>Checkout my dev projects</span>
-              </a>
+            <Link
+              href={"/projects"}
+              className="border-2 rounded-full px-8 py-2 border-primary dark:border-white text-lg font-medium text-primary   hover:text-dark-theme hover:border-dark-theme transition duration-400 ease-in-out dark:text-gray-200 dark:hover:text-warning dark:hover:border-warning _floating bottom-[-80px]"
+            >
+              <FaCode className="hidden md:inline-block" />{" "}
+              <span>Checkout my dev projects</span>
             </Link>
           </div>
         </div>

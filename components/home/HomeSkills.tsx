@@ -32,7 +32,7 @@ const HomeSkills = (props: Props) => {
   return (
     <>
       <hr className="border-1 gray-200 dark:border-gray-800" />
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-between relative max-w-[1200px] mx-auto pt-24 pb-24 px-5 gap-10 items-center relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-between relative max-w-[1200px] mx-auto pt-24 pb-24 px-5 gap-10 items-center ">
         <div>
           <div>
             <h2 className=" text-5xl font-bold mb-2 text-primary dark:text-warning">
@@ -74,7 +74,7 @@ const HomeSkills = (props: Props) => {
           />
         </div>
         <div>
-          <div className="flex inline-flex items-center justify-center gap-3 mb-8 w-full">
+          <div className="flex  items-center justify-center gap-3 mb-8 w-full">
             <p>Favourite Tech Stacks</p>
             <Switch
               //   checkedChildren="开启"
@@ -83,6 +83,7 @@ const HomeSkills = (props: Props) => {
               className="bg-primary dark:bg-primary-hov"
               //   defaultChecked
               defaultChecked={fullSkills}
+              aria-label="Tech Stacks Button"
             />
             <p>All Tech Stacks</p>
           </div>

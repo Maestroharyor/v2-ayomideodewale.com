@@ -118,14 +118,13 @@ const DefaultLayout = (props: Props) => {
       <DesktopHeader />
       <Mobileheader />
 
-      <div
-        className={`dark:text-white-dark z-[10] overflow-x-hidden ${
-          router.pathname === "/404" ? "" : "min-h-[100vh] "
+      <main
+        className={`dark:text-white-dark z-[10] overflow-x-hidden  min-h-[100vh]
         }`}
       >
         {props.children}
-      </div>
-      {router.pathname !== "/404" && <Footer />}
+      </main>
+      {<Footer />}
     </>
   );
 };

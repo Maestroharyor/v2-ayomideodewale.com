@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaExchangeAlt, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { footerMenu } from "../../data/menu";
+import tailwindSVG from "@/public/static/svgs/tailwindcss.svg";
+import reactSVG from "@/public/static/svgs/react.svg";
+import NextSVG from "@/public/static/svgs/nextjs.svg";
 
 type Props = {};
 
@@ -11,9 +14,9 @@ const Footer = (props: Props) => {
     <footer className="border-t border-gray-200 dark:border-gray-900 dark:text-white pt-20 pb-20 ">
       <div className="max-w-[800px] mx-auto">
         <div className="mb-10">
-          <h4 className="uppercase text-lg font-bold text-center dark:text-warning mb-10">
+          <p className="uppercase text-lg font-bold text-center dark:text-warning mb-10">
             MENU LINKS:
-          </h4>
+          </p>
           <div className="flex flex-col md:flex-row flex-wrap gap-3 justify-between">
             {footerMenu.map((menu) => (
               <div key={menu.title} className="">
@@ -28,10 +31,12 @@ const Footer = (props: Props) => {
                     <FaExternalLinkAlt size={10} />
                   </a>
                 ) : (
-                  <Link legacyBehavior href={menu.link} passHref>
-                    <a className="text-xl hover:text-primary-hov dark:hover:text-warning">
-                      {menu.title}
-                    </a>
+                  <Link
+                    href={menu.link}
+                    passHref
+                    className="text-xl hover:text-primary-hov dark:hover:text-warning"
+                  >
+                    {menu.title}
                   </Link>
                 )}
               </div>
@@ -39,13 +44,13 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <div className="max-w-4xl w-full m-auto mt-8 pt-8 sm:mt-4 sm:pt-4 text-center text-fun-gray border-t border-fun-pink-dark">
-          <p className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center">
             <div className="inline-flex items-center uppercase text-xs font-bold tracking-widest">
               Made with{" "}
               <div className="space-x-2 inline-flex items-center -mt-1 ml-3">
                 <span>
                   <Image
-                    src="/static/svgs/react.svg"
+                    src={reactSVG}
                     width={40}
                     height={40}
                     className=""
@@ -56,7 +61,7 @@ const Footer = (props: Props) => {
                 </span>
                 <span>
                   <Image
-                    src="/static/svgs/nextjs.svg"
+                    src={NextSVG}
                     width={40}
                     height={40}
                     className="dark:invert"
@@ -67,7 +72,7 @@ const Footer = (props: Props) => {
                 </span>
                 <span>
                   <Image
-                    src="/static/svgs/tailwindcss.svg"
+                    src={tailwindSVG}
                     width={40}
                     height={40}
                     className=""
@@ -84,7 +89,7 @@ const Footer = (props: Props) => {
               </span>
               <span>Ayomide Odewale (Maestro)</span>
             </div>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

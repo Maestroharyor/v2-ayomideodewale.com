@@ -13,7 +13,7 @@ const HomeAbout = (props: Props) => {
   const [value, setValue] = useState(5);
 
   const onChange = (e: RadioChangeEvent) => {
-    console.log("radio checked", e.target.value);
+    // console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
 
@@ -39,6 +39,7 @@ const HomeAbout = (props: Props) => {
               value={value}
               className="w-full flex justify-between"
               size="large"
+              aria-label="profile"
             >
               <Radio value={1}></Radio>
               <Radio value={2}></Radio>

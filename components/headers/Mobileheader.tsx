@@ -59,10 +59,10 @@ const MobileHeader = ({ theme }: Props) => {
   }, [theme?.lightMode]);
 
   return (
-    <header className="block lg:hidden relative bg-gray-100/90 sticky top-0 z-[20] dark:bg-[rgba(0,10,31,0.96)]">
+    <header className="block lg:hidden  bg-gray-100/90 sticky top-0 z-[20] dark:bg-[rgba(0,10,31,0.96)]">
       <nav className="bg-gray-100 dark:bg-dark-theme py-2 px-5 flex justify-between items-center">
-        <Link legacyBehavior href="/" passHref>
-          <motion.a
+        <Link legacyBehavior href="/">
+          <motion.div
             className="font-black text-xl flex items-center gap-1.5 "
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ const MobileHeader = ({ theme }: Props) => {
                 );
               })}
             </div>
-          </motion.a>
+          </motion.div>
         </Link>
 
         <div className="flex gap-3 items-center">

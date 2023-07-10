@@ -43,7 +43,11 @@ const HomeConnect = (props: Props) => {
 
   return (
     <div className="pt-20 relative max-w-[1200px] mx-auto">
-      <img className="w-30 m-auto mb-2" src="/static/doodles/lineBreak.svg" />
+      <img
+        className="w-30 m-auto mb-2"
+        src="/static/doodles/lineBreak.svg"
+        alt="doodle-line"
+      />
       <div className="pt-14 pb-28 flex flex-col justify-center items-center">
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-3 text-primary dark:text-warning">
