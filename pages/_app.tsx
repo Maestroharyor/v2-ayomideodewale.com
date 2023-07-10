@@ -5,8 +5,6 @@ import "@fontsource/koho/400.css";
 import "@fontsource/koho/500.css";
 import "@fontsource/koho/600.css";
 import "@fontsource/koho/700.css";
-import "antd/dist/antd.css";
-import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
 import { Provider } from "react-redux";
 import store from "../store/store";
